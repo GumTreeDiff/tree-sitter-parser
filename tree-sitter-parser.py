@@ -5,7 +5,7 @@ from xml.dom import minidom
 import sys
 import os
 
-script_dir = os.path.abspath(os.path.dirname(__file__))
+script_dir = os.path.abspath(os.path.dirname(os.path.realpath(__file__)))
 
 Language.build_library(
   script_dir + '/build/languages.so',
