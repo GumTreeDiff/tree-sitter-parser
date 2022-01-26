@@ -13,3 +13,6 @@
 [submodule "tree-sitter-javascript"]
 	path = tree-sitter-javascript
 	url = https://github.com/tree-sitter/tree-sitter-javascript
+[submodule "tree-sitter-typescript"]
+	path = tree-sitter-typescript
+	url = https://github.com/tree-sitter/tree-sitter-typescript.git
