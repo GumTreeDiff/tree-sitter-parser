@@ -10,6 +10,7 @@ script_dir = os.path.abspath(os.path.dirname(os.path.realpath(__file__)))
 Language.build_library(
   script_dir + '/build/languages.so',
   [
+    script_dir + '/tree-sitter-c',
     script_dir + '/tree-sitter-python',
     script_dir + '/tree-sitter-java',
     script_dir + '/tree-sitter-javascript',
@@ -20,6 +21,7 @@ Language.build_library(
 )
 
 PARSERS = {
+  "c": Language(script_dir + '/build/languages.so', 'c'),
   "java": Language(script_dir + '/build/languages.so', 'java'),
   "javascript": Language(script_dir + '/build/languages.so', 'javascript'),
   "ocaml": Language(script_dir + '/build/languages.so', 'ocaml'),
