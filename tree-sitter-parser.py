@@ -7,6 +7,8 @@ import os
 
 script_dir = os.path.abspath(os.path.dirname(os.path.realpath(__file__)))
 
+UNEXPANDED_NODES = ['string'] # TODO should be a per parser configuration
+
 Language.build_library(
   script_dir + '/build/languages.so',
   [
@@ -49,10 +51,11 @@ def main(file, language):
   print(xml)
 
 def process(node, xmlNode):
-  for child in node.children:
-    xmlChildNode = toXmlNode(child)
-    xmlNode.appendChild(xmlChildNode)
-    process(child, xmlChildNode)
+  if not node.type in UNEXPANDED_NODES:
+    for child in node.children:
+      xmlChildNode = toXmlNode(child)
+      xmlNode.appendChild(xmlChildNode)
+      process(child, xmlChildNode)
 
 def toXmlNode(node):
   xmlNode = doc.createElement('tree')
@@ -62,7 +65,7 @@ def toXmlNode(node):
   length = endPos - startPos
   xmlNode.setAttribute("pos", str(startPos))
   xmlNode.setAttribute("length", str(length))
-  if node.child_count == 0:
+  if node.child_count == 0 or node.type in UNEXPANDED_NODES:
     xmlNode.setAttribute("label", node.text.decode('utf8'))
   return xmlNode
 
