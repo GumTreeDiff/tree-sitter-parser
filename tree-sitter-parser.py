@@ -2,17 +2,17 @@
 
 from tree_sitter import Language, Parser
 from xml.dom import minidom
-import sys
 import os
+import argparse
+import yaml
 
 script_dir = os.path.abspath(os.path.dirname(os.path.realpath(__file__)))
+rules_file = os.path.abspath(os.path.dirname(os.path.realpath(__file__))) + "/rules.yml"
 
-TREE_REWRITE_RULES = {
-  'java': { 
-    'flattened': ['scoped_identifier', 'integral_type', 'array_type', 'generic_type', 'scoped_type_identifier'], 
-    'aliased': {'+=': 'affectation_operator', '-=': 'affectation_operator', '*=': 'affectation_operator', '/=': 'affectation_operator', '=': 'affectation_operator', '|=': 'affectation_operator', '&=': 'affectation_operator', '^=': 'affectation_operator', '-': 'arithmetic_operator', '+': 'arithmetic_operator', '/': 'arithmetic_operator', '*': 'arithmetic_operator', '==': 'comparison_operator', '<': 'comparison_operator', '<=': 'comparison_operator', '>': 'comparison_operator', '>=': 'comparison_operator', '!=': 'comparison_operator', '&&': 'logical_operator', '||': 'logical_operator', '++': 'increment_operator', '--': 'increment_operator', '&': 'bitwise_operator', '|': 'bitwise_operator', '^': 'bitwise_operator', 'scoped_identifier': 'identifier', 'public': 'visibility', 'protected': 'visibility', 'private': 'visibility', 'class_declaration': 'type_declaration', 'interface_declaration': 'type_declaration', 'enum_declaration': 'type_declaration', 'integral_type': 'type', 'type_identifier': 'type', 'array_type': 'type', 'generic_type': 'type', 'scoped_type_identifier': 'type', 'enhanced_for_statement': 'for_statement', 'class': 'type_keyword', 'interface': 'type_keyword', 'enum': 'type_keyword', 'class_body': 'type_body', 'interface_body': 'type_body', 'enum_body': 'type_body'}, 
-    'ignored': [';', '{', '}', '(', ')', '[', ']', '.', 'import', 'return', 'for', 'if', 'else', 'while', 'break', 'throw']},
-}
+EMPTY_CONFIG = { 'flattened': [], 'aliased': {}, 'ignored': []}
+
+with open(rules_file, "r") as stream:
+  TREE_REWRITE_RULES = yaml.safe_load(stream)
 
 Language.build_library(
   script_dir + '/build/languages.so',
@@ -45,11 +45,18 @@ positions = [0]
 
 doc = minidom.Document()
 
+parser = argparse.ArgumentParser()
+parser.add_argument("file", help="path to the file to parse")
+parser.add_argument("language", help="language of to the file to parse")
+parser.add_argument("--raw", action="store_true", help="deactivate the rewrite rules")
+args = parser.parse_args()
+
 def main(file, language):
   parser = Parser()
   parser.set_language(PARSERS[language])
   config = retrieveConfig(language)
   tree = parser.parse(bytes(readFile(file), "utf8"))
+
   xmlRoot = toXmlNode(tree.root_node, config)
   doc.appendChild(xmlRoot)
   process(tree.root_node, xmlRoot, config)
@@ -65,7 +72,7 @@ def process(node, xmlNode, config):
         process(child, xmlChildNode, config)
 
 def retrieveConfig(language):
-  return TREE_REWRITE_RULES[language] if language in TREE_REWRITE_RULES else { 'flattened': [], 'aliased': {}, 'ignored': []}
+  return TREE_REWRITE_RULES[language] if not args.raw and language in TREE_REWRITE_RULES else EMPTY_CONFIG
 
 def toXmlNode(node, config):
   xmlNode = doc.createElement('tree')
@@ -90,5 +97,4 @@ def readFile(file):
       positions.append(index)
   return data
 
-if __name__ == '__main__':
-  main(sys.argv[1], sys.argv[2])
+main(args.file, args.language)
