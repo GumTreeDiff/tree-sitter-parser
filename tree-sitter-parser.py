@@ -9,7 +9,7 @@ import yaml
 script_dir = os.path.abspath(os.path.dirname(os.path.realpath(__file__)))
 rules_file = os.path.abspath(os.path.dirname(os.path.realpath(__file__))) + "/rules.yml"
 
-EMPTY_CONFIG = { 'flattened': [], 'aliased': {}, 'ignored': []}
+EMPTY_CONFIG = {'flattened': [], 'aliased': {}, 'ignored': []}
 
 with open(rules_file, "r") as stream:
   TREE_REWRITE_RULES = yaml.safe_load(stream)
@@ -56,7 +56,6 @@ def main(file, language):
   parser.set_language(PARSERS[language])
   config = retrieveConfig(language)
   tree = parser.parse(bytes(readFile(file), "utf8"))
-
   xmlRoot = toXmlNode(tree.root_node, config)
   doc.appendChild(xmlRoot)
   process(tree.root_node, xmlRoot, config)
