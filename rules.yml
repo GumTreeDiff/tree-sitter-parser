@@ -71,3 +71,8 @@ java:
     - do
     - break
     - throw
+ocaml:
+  flattened:
+    - string
+  aliased: []
+  ignored: []
