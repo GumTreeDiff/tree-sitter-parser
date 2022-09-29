@@ -18,12 +18,13 @@ Language.build_library(
   script_dir + '/build/languages.so',
   [
     script_dir + '/tree-sitter-c',
+    script_dir + '/tree-sitter-c-sharp',
     script_dir + '/tree-sitter-java',
     script_dir + '/tree-sitter-javascript',
-    script_dir + '/tree-sitter-r',
     script_dir + '/tree-sitter-ocaml/ocaml',
     script_dir + '/tree-sitter-php',
     script_dir + '/tree-sitter-python',
+    script_dir + '/tree-sitter-r',
     script_dir + '/tree-sitter-ruby',
     script_dir + '/tree-sitter-typescript/typescript'
   ]
@@ -31,6 +32,7 @@ Language.build_library(
 
 PARSERS = {
   "c": Language(script_dir + '/build/languages.so', 'c'),
+  "csharp": Language(script_dir + '/build/languages.so', 'c_sharp'),
   "java": Language(script_dir + '/build/languages.so', 'java'),
   "javascript": Language(script_dir + '/build/languages.so', 'javascript'),
   "ocaml": Language(script_dir + '/build/languages.so', 'ocaml'),
