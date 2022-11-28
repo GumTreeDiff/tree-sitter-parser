@@ -76,3 +76,8 @@ ocaml:
     - string
   aliased: []
   ignored: []
+rust:
+  flattened:
+    - string_literal
+  aliased: []
+  ignored: []

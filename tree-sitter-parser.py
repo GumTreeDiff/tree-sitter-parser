@@ -26,6 +26,7 @@ Language.build_library(
     script_dir + '/tree-sitter-python',
     script_dir + '/tree-sitter-r',
     script_dir + '/tree-sitter-ruby',
+    script_dir + '/tree-sitter-rust',
     script_dir + '/tree-sitter-typescript/typescript'
   ]
 )
@@ -40,6 +41,7 @@ PARSERS = {
   "python": Language(script_dir + '/build/languages.so', 'python'),
   "r": Language(script_dir + '/build/languages.so', 'r'),
   "ruby": Language(script_dir + '/build/languages.so', 'ruby'),
+  "rust": Language(script_dir + '/build/languages.so', 'rust'),
   "typescript": Language(script_dir + '/build/languages.so', 'typescript'),
 }
 
