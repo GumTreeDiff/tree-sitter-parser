@@ -2,6 +2,7 @@
 
 from tree_sitter import Language, Parser
 from xml.dom import minidom
+from io import StringIO
 import os
 import argparse
 import yaml
@@ -10,6 +11,8 @@ script_dir = os.path.abspath(os.path.dirname(os.path.realpath(__file__)))
 rules_file = os.path.abspath(os.path.dirname(os.path.realpath(__file__))) + "/rules.yml"
 
 EMPTY_CONFIG = {'flattened': [], 'aliased': {}, 'ignored': []}
+
+MAX_LABEL_SIZE = 75
 
 with open(rules_file, "r") as stream:
   TREE_REWRITE_RULES = yaml.safe_load(stream)
@@ -53,6 +56,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("file", help="path to the file to parse")
 parser.add_argument("language", help="language of to the file to parse")
 parser.add_argument("--raw", action="store_true", help="deactivate the rewrite rules")
+parser.add_argument("--pretty", action="store_true", help="pretty print the AST instead of using XML")
 args = parser.parse_args()
 
 def main(file, language):
@@ -63,8 +67,30 @@ def main(file, language):
   xmlRoot = toXmlNode(tree.root_node, config)
   doc.appendChild(xmlRoot)
   process(tree.root_node, xmlRoot, config)
-  xml = doc.toprettyxml()
-  print(xml)
+  if args.pretty:
+    out = StringIO()
+    pretty_print_ast(doc.firstChild, out)
+    print(out.getvalue())
+  else:
+    print(doc.toprettyxml())
+
+def pretty_print_ast(elm, out, level=0):
+  elm_desc = f'\033[1m{elm.getAttribute("type")}\033[0m'
+  if elm.hasAttribute("label"):
+    elm_desc += f' \033[94m{sanitize_label(elm.getAttribute("label"))}\033[0m'
+  left_bound = int(elm.getAttribute("pos"))
+  right_bound = left_bound + int(elm.getAttribute("length"))
+  elm_desc += f' [{str(left_bound)},{right_bound}]'
+  log_start = "" if level == 0 else "\n"
+  out.write(f'{log_start}{"  " * level}{elm_desc}')
+  for child in elm.childNodes:
+    pretty_print_ast(child, out, level + 1)
+
+def sanitize_label(raw_label):
+  raw_label = raw_label.replace("\n", "")
+  raw_label = raw_label.replace("\t", "")
+  label = (raw_label[:MAX_LABEL_SIZE] + '..') if len(raw_label) > MAX_LABEL_SIZE else raw_label
+  return label
 
 def process(node, xmlNode, config):
   if not node.type in config['flattened']:
