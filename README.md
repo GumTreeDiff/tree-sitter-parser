@@ -54,4 +54,5 @@ Here is the list of the available parsers:
 - `python`
 - `r`
 - `ruby`
+- `rust`
 - `typescript`
