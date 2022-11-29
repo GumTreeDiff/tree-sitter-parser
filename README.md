@@ -8,6 +8,16 @@ First, install tree-sitter [Python's bindings](https://github.com/tree-sitter/py
 
 To retrieve a GumTree XML run the command: `tree-sitter-parser.py FILE LANGUAGE` where `LANGUAGE` is the parser corresponding to `FILE` (for instance, `python`).
 
+## Usage
+
+The following command will write an AST XML on the standard output:
+
+```
+tree-sitter-parser.py FILE LANGUAGE
+```
+
+You can use the `--raw` option to deactivate the rewrite rules and the `--pretty` option to have a readable output instead of XML for debugging purpose.
+
 ## Rules
 
 The resulting ASTs produced by the tree-sitter parsers can be fine-tuned using simple tree rewriting operations as defined in the `rules.yml` YAML file. There are three kinds of operations:
