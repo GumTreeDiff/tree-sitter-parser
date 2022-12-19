@@ -79,5 +79,21 @@ ocaml:
 rust:
   flattened:
     - string_literal
-  aliased: []
-  ignored: []
+    - scoped_identifier
+    - visibility_modifier
+  aliased:
+    scoped_identifier: identifier
+  ignored:
+    - ;
+    - '.'
+    - ','
+    - (
+    - )
+    - '{'
+    - '}'
+    - '['
+    - ']'
+    - '::'
+    - ':'
+    - fn
+    - '->'
