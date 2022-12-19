@@ -4,7 +4,7 @@
 
 This project uses the [`pytest`] test framework to define small, readable tests.
 
-You can install the `pytest` by running ...
+You can install `pytest` by running ...
 
 ```sh
 pip install -r tests/requirements.txt
