@@ -24,6 +24,7 @@ def init_parsers(script_dir):
         [
             script_dir + "/tree-sitter-c",
             script_dir + "/tree-sitter-c-sharp",
+            script_dir + "/tree-sitter-cmake",
             script_dir + "/tree-sitter-java",
             script_dir + "/tree-sitter-javascript",
             script_dir + "/tree-sitter-ocaml/ocaml",
@@ -42,6 +43,7 @@ def init_parsers(script_dir):
     return {
         "c": Language(script_dir + "/build/languages.so", "c"),
         "csharp": Language(script_dir + "/build/languages.so", "c_sharp"),
+        "cmake": Language(script_dir + "/build/languages.so", "cmake"),
         "java": Language(script_dir + "/build/languages.so", "java"),
         "javascript": Language(script_dir + "/build/languages.so", "javascript"),
         "ocaml": Language(script_dir + "/build/languages.so", "ocaml"),
