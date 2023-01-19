@@ -28,15 +28,13 @@ def main():
     args = parser.parse_args()
 
     script_dir = os.path.abspath(os.path.dirname(os.path.realpath(__file__)))
-    rules_file = (
-        os.path.abspath(os.path.dirname(os.path.realpath(__file__))) + "/rules.yml"
-    )
+    rules_file = os.path.join(script_dir, "rules.yml")
 
     with open(rules_file, "r") as stream:
-        TREE_REWRITE_RULES = yaml.safe_load(stream)
+        tree_rewrite_rules = yaml.safe_load(stream)
     config = (
-        TREE_REWRITE_RULES[args.language]
-        if not args.raw and args.language in TREE_REWRITE_RULES
+        tree_rewrite_rules[args.language]
+        if not args.raw and args.language in tree_rewrite_rules
         else EMPTY_CONFIG
     )
 

@@ -92,6 +92,9 @@ def create_newline_offsets(input: bytes):
 
 
 def process(doc, node, xml_node, config, newline_offsets):
+    """
+    Process a given node of the ast to include it in a given xml document.
+    """
     if not node.type in config["flattened"]:
         for child in node.children:
             if not child.type in config["ignored"]:
@@ -101,6 +104,9 @@ def process(doc, node, xml_node, config, newline_offsets):
 
 
 def to_xml_node(doc, node, config, newline_offsets):
+    """
+    Converts an AST node into a XML node.
+    """
     xmlNode = doc.createElement("tree")
     type = config["aliased"][node.type] if node.type in config["aliased"] else node.type
     xmlNode.setAttribute("type", type)
@@ -115,6 +121,9 @@ def to_xml_node(doc, node, config, newline_offsets):
 
 
 def pretty_print_ast(elm, out, level=0):
+    """
+    Outputs the AST into a human-readable format.
+    """
     elm_desc = f'\033[1m{elm.getAttribute("type")}\033[0m'
     if elm.hasAttribute("label"):
         elm_desc += f' \033[94m{sanitize_label(elm.getAttribute("label"))}\033[0m'

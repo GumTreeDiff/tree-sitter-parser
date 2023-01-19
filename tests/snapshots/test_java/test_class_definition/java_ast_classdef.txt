@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<tree type="program" pos="5" length="144">
+	<tree type="type_declaration" pos="5" length="144">
+		<tree type="modifiers" pos="5" length="6">
+			<tree type="visibility" pos="5" length="6" label="public"/>
+		</tree>
+		<tree type="type_keyword" pos="12" length="5" label="class"/>
+		<tree type="identifier" pos="18" length="3" label="Foo"/>
+		<tree type="type_parameters" pos="21" length="3">
+			<tree type="comparison_operator" pos="21" length="1" label="&lt;"/>
+			<tree type="type_parameter" pos="22" length="1">
+				<tree type="type" pos="22" length="1" label="E"/>
+			</tree>
+			<tree type="comparison_operator" pos="23" length="1" label="&gt;"/>
+		</tree>
+		<tree type="superclass" pos="25" length="11">
+			<tree type="extends" pos="25" length="7" label="extends"/>
+			<tree type="type" pos="33" length="3" label="Bar"/>
+		</tree>
+		<tree type="type_body" pos="37" length="112">
+			<tree type="field_declaration" pos="47" length="26">
+				<tree type="type" pos="47" length="6" label="String"/>
+				<tree type="variable_declarator" pos="54" length="18">
+					<tree type="identifier" pos="54" length="3" label="bar"/>
+					<tree type="affectation_operator" pos="58" length="1" label="="/>
+					<tree type="object_creation_expression" pos="60" length="12">
+						<tree type="new" pos="60" length="3" label="new"/>
+						<tree type="type" pos="64" length="6" label="String"/>
+						<tree type="argument_list" pos="70" length="2"/>
+					</tree>
+				</tree>
+			</tree>
+			<tree type="method_declaration" pos="83" length="55">
+				<tree type="modifiers" pos="83" length="7">
+					<tree type="visibility" pos="83" length="7" label="private"/>
+				</tree>
+				<tree type="void_type" pos="91" length="4" label="void"/>
+				<tree type="identifier" pos="96" length="3" label="foo"/>
+				<tree type="formal_parameters" pos="99" length="2"/>
+				<tree type="block" pos="102" length="36">
+					<tree type="return_statement" pos="116" length="12">
+						<tree type="null_literal" pos="123" length="4" label="null"/>
+					</tree>
+				</tree>
+			</tree>
+		</tree>
+	</tree>
+</tree>
