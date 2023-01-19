@@ -1,0 +1,187 @@
+<?xml version="1.0" ?>
+<tree type="source_file" pos="0" length="457">
+	<tree type="normal_command" pos="5" length="31">
+		<tree type="identifier" pos="5" length="6" label="option"/>
+		<tree type="(" pos="11" length="1" label="("/>
+		<tree type="argument" pos="12" length="12">
+			<tree type="unquoted_argument" pos="12" length="12" label="BUILD_SERVER"/>
+		</tree>
+		<tree type="argument" pos="25" length="6">
+			<tree type="quoted_argument" pos="25" length="6">
+				<tree type="&quot;" pos="25" length="1" label="&quot;"/>
+				<tree type="quoted_element" pos="26" length="4" label="des1"/>
+				<tree type="&quot;" pos="30" length="1" label="&quot;"/>
+			</tree>
+		</tree>
+		<tree type="argument" pos="32" length="3">
+			<tree type="unquoted_argument" pos="32" length="3" label="YES"/>
+		</tree>
+		<tree type=")" pos="35" length="1" label=")"/>
+	</tree>
+	<tree type="normal_command" pos="41" length="36">
+		<tree type="identifier" pos="41" length="3" label="set"/>
+		<tree type="(" pos="44" length="1" label="("/>
+		<tree type="argument" pos="45" length="10">
+			<tree type="unquoted_argument" pos="45" length="10" label="SERVER_SRC"/>
+		</tree>
+		<tree type="argument" pos="56" length="20">
+			<tree type="unquoted_argument" pos="56" length="20" label="files_for_test/a.cxx"/>
+		</tree>
+		<tree type=")" pos="76" length="1" label=")"/>
+	</tree>
+	<tree type="if_condition" pos="82" length="86">
+		<tree type="if_command" pos="82" length="9">
+			<tree type="if" pos="82" length="2" label="if"/>
+			<tree type="(" pos="84" length="1" label="("/>
+			<tree type="argument" pos="85" length="5">
+				<tree type="unquoted_argument" pos="85" length="5" label="APPLE"/>
+			</tree>
+			<tree type=")" pos="90" length="1" label=")"/>
+		</tree>
+		<tree type="normal_command" pos="100" length="18">
+			<tree type="identifier" pos="100" length="3" label="set"/>
+			<tree type="(" pos="103" length="1" label="("/>
+			<tree type="argument" pos="104" length="11">
+				<tree type="unquoted_argument" pos="104" length="11" label="APP_VERSION"/>
+			</tree>
+			<tree type="argument" pos="116" length="1">
+				<tree type="unquoted_argument" pos="116" length="1" label="2"/>
+			</tree>
+			<tree type=")" pos="117" length="1" label=")"/>
+		</tree>
+		<tree type="else_command" pos="123" length="6">
+			<tree type="else" pos="123" length="4" label="else"/>
+			<tree type="(" pos="127" length="1" label="("/>
+			<tree type=")" pos="128" length="1" label=")"/>
+		</tree>
+		<tree type="normal_command" pos="138" length="18">
+			<tree type="identifier" pos="138" length="3" label="set"/>
+			<tree type="(" pos="141" length="1" label="("/>
+			<tree type="argument" pos="142" length="11">
+				<tree type="unquoted_argument" pos="142" length="11" label="APP_VERSION"/>
+			</tree>
+			<tree type="argument" pos="154" length="1">
+				<tree type="unquoted_argument" pos="154" length="1" label="1"/>
+			</tree>
+			<tree type=")" pos="155" length="1" label=")"/>
+		</tree>
+		<tree type="endif_command" pos="161" length="7">
+			<tree type="endif" pos="161" length="5" label="endif"/>
+			<tree type="(" pos="166" length="1" label="("/>
+			<tree type=")" pos="167" length="1" label=")"/>
+		</tree>
+	</tree>
+	<tree type="if_condition" pos="174" length="91">
+		<tree type="if_command" pos="174" length="34">
+			<tree type="if" pos="174" length="2" label="if"/>
+			<tree type="(" pos="176" length="1" label="("/>
+			<tree type="argument" pos="177" length="11">
+				<tree type="unquoted_argument" pos="177" length="11" label="APP_VERSION"/>
+			</tree>
+			<tree type="argument" pos="189" length="7">
+				<tree type="unquoted_argument" pos="189" length="7" label="GREATER"/>
+			</tree>
+			<tree type="argument" pos="197" length="1">
+				<tree type="unquoted_argument" pos="197" length="1" label="1"/>
+			</tree>
+			<tree type="argument" pos="199" length="2">
+				<tree type="unquoted_argument" pos="199" length="2" label="OR"/>
+			</tree>
+			<tree type="argument" pos="202" length="5">
+				<tree type="unquoted_argument" pos="202" length="5" label="LINUX"/>
+			</tree>
+			<tree type=")" pos="207" length="1" label=")"/>
+		</tree>
+		<tree type="normal_command" pos="217" length="36">
+			<tree type="identifier" pos="217" length="4" label="list"/>
+			<tree type="(" pos="221" length="1" label="("/>
+			<tree type="argument" pos="222" length="6">
+				<tree type="unquoted_argument" pos="222" length="6" label="APPEND"/>
+			</tree>
+			<tree type="argument" pos="229" length="10">
+				<tree type="unquoted_argument" pos="229" length="10" label="SERVER_SRC"/>
+			</tree>
+			<tree type="argument" pos="240" length="12">
+				<tree type="unquoted_argument" pos="240" length="12" label="unix/new.cxx"/>
+			</tree>
+			<tree type=")" pos="252" length="1" label=")"/>
+		</tree>
+		<tree type="endif_command" pos="258" length="7">
+			<tree type="endif" pos="258" length="5" label="endif"/>
+			<tree type="(" pos="263" length="1" label="("/>
+			<tree type=")" pos="264" length="1" label=")"/>
+		</tree>
+	</tree>
+	<tree type="normal_command" pos="271" length="34">
+		<tree type="identifier" pos="271" length="14" label="add_executable"/>
+		<tree type="(" pos="285" length="1" label="("/>
+		<tree type="argument" pos="286" length="4">
+			<tree type="unquoted_argument" pos="286" length="4" label="exec"/>
+		</tree>
+		<tree type="argument" pos="291" length="13">
+			<tree type="unquoted_argument" pos="291" length="13">
+				<tree type="variable_ref" pos="291" length="13">
+					<tree type="normal_var" pos="291" length="13">
+						<tree type="$" pos="291" length="1" label="$"/>
+						<tree type="{" pos="292" length="1" label="{"/>
+						<tree type="variable" pos="293" length="10" label="SERVER_SRC"/>
+						<tree type="}" pos="303" length="1" label="}"/>
+					</tree>
+				</tree>
+			</tree>
+		</tree>
+		<tree type=")" pos="304" length="1" label=")"/>
+	</tree>
+	<tree type="normal_command" pos="310" length="46">
+		<tree type="identifier" pos="310" length="11" label="add_library"/>
+		<tree type="(" pos="321" length="1" label="("/>
+		<tree type="argument" pos="322" length="3">
+			<tree type="unquoted_argument" pos="322" length="3" label="lib"/>
+		</tree>
+		<tree type="argument" pos="326" length="29">
+			<tree type="unquoted_argument" pos="326" length="29" label="another_folder_for_test/*.cxx"/>
+		</tree>
+		<tree type=")" pos="355" length="1" label=")"/>
+	</tree>
+	<tree type="if_condition" pos="361" length="96">
+		<tree type="if_command" pos="361" length="7">
+			<tree type="if" pos="361" length="2" label="if"/>
+			<tree type="(" pos="363" length="1" label="("/>
+			<tree type="argument" pos="364" length="3">
+				<tree type="unquoted_argument" pos="364" length="3" label="foo"/>
+			</tree>
+			<tree type=")" pos="367" length="1" label=")"/>
+		</tree>
+		<tree type="if_condition" pos="377" length="68">
+			<tree type="if_command" pos="377" length="8">
+				<tree type="if" pos="377" length="2" label="if"/>
+				<tree type="(" pos="379" length="1" label="("/>
+				<tree type="argument" pos="380" length="4">
+					<tree type="unquoted_argument" pos="380" length="4" label="john"/>
+				</tree>
+				<tree type=")" pos="384" length="1" label=")"/>
+			</tree>
+			<tree type="normal_command" pos="398" length="31">
+				<tree type="identifier" pos="398" length="21" label="target_link_libraries"/>
+				<tree type="(" pos="419" length="1" label="("/>
+				<tree type="argument" pos="420" length="4">
+					<tree type="unquoted_argument" pos="420" length="4" label="exec"/>
+				</tree>
+				<tree type="argument" pos="425" length="3">
+					<tree type="unquoted_argument" pos="425" length="3" label="lib"/>
+				</tree>
+				<tree type=")" pos="428" length="1" label=")"/>
+			</tree>
+			<tree type="endif_command" pos="438" length="7">
+				<tree type="endif" pos="438" length="5" label="endif"/>
+				<tree type="(" pos="443" length="1" label="("/>
+				<tree type=")" pos="444" length="1" label=")"/>
+			</tree>
+		</tree>
+		<tree type="endif_command" pos="450" length="7">
+			<tree type="endif" pos="450" length="5" label="endif"/>
+			<tree type="(" pos="455" length="1" label="("/>
+			<tree type=")" pos="456" length="1" label=")"/>
+		</tree>
+	</tree>
+</tree>
