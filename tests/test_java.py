@@ -16,8 +16,8 @@ def test_class_definition(snapshot):
     public class Foo<E> extends Bar {
         String bar = new String();
 
-        private void foo() {
-            return null;
+        private boolean foo() {
+            return a < b;
         }     
     }"""
 

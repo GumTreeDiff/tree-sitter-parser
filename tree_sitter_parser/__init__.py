@@ -91,13 +91,46 @@ def create_newline_offsets(input: bytes):
     return offsets
 
 
+def get_selector(node, config, action):
+    for selector in config[action]:
+        if match(selector, node):
+            return selector
+    
+    return ""
+
+
+def match(selector, node):
+    expected_types = selector.split()
+    ancestor_types = collect_ancestor_types(node, len(expected_types))
+    if len(ancestor_types) < len(expected_types):
+        return False
+    else:
+        for i in range(len(expected_types)):
+            if ancestor_types[i] != expected_types[i]:
+                return False
+        
+        return True
+
+
+def collect_ancestor_types(node, max_level):
+    ancestor_types = []
+    for _ in range(max_level):
+        ancestor_types.append(node.type)
+        if node.parent is None:
+            return ancestor_types
+        else:
+            node = node.parent
+    ancestor_types.reverse()
+    return ancestor_types
+
+
 def process(doc, node, xml_node, config, newline_offsets):
     """
     Process a given node of the ast to include it in a given xml document.
     """
-    if not node.type in config["flattened"]:
+    if not get_selector(node, config, 'flattened'):
         for child in node.children:
-            if not child.type in config["ignored"]:
+            if not get_selector(child, config, 'ignored'):
                 xml_child_node = to_xml_node(doc, child, config, newline_offsets)
                 xml_node.appendChild(xml_child_node)
                 process(doc, child, xml_child_node, config, newline_offsets)
@@ -108,14 +141,15 @@ def to_xml_node(doc, node, config, newline_offsets):
     Converts an AST node into a XML node.
     """
     xmlNode = doc.createElement("tree")
-    type = config["aliased"][node.type] if node.type in config["aliased"] else node.type
+    alias_selector = get_selector(node, config, "aliased")
+    type = config["aliased"][alias_selector] if alias_selector else node.type
     xmlNode.setAttribute("type", type)
     startPos = newline_offsets[node.start_point[0]] + node.start_point[1]
     endPos = newline_offsets[node.end_point[0]] + node.end_point[1]
     length = endPos - startPos
     xmlNode.setAttribute("pos", str(startPos))
     xmlNode.setAttribute("length", str(length))
-    if node.child_count == 0 or node.type in config["flattened"]:
+    if node.child_count == 0 or get_selector(node, config, 'flattened'):
         xmlNode.setAttribute("label", node.text.decode("utf8"))
     return xmlNode
 

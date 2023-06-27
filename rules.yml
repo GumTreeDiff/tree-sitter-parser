@@ -5,6 +5,7 @@ java:
     - array_type
     - generic_type
     - scoped_type_identifier 
+    - type_parameter
   aliased:
     +=: affectation_operator
     -=: affectation_operator
@@ -19,9 +20,9 @@ java:
     /: arithmetic_operator
     '*': arithmetic_operator
     ==: comparison_operator
-    <: comparison_operator
+    'binary_expression <': comparison_operator
     <=: comparison_operator
-    '>': comparison_operator
+    'binary_expression >': comparison_operator
     '>=': comparison_operator
     '!=': comparison_operator
     '&&': logical_operator
@@ -42,8 +43,11 @@ java:
     type_identifier: type
     array_type: type
     generic_type: type
+    void_type: type
+    boolean_type: type
     scoped_type_identifier: type
     enhanced_for_statement: for_statement
+    'enhanced_for_statement :': for_iterated 
     class: type_keyword
     interface: type_keyword
     enum: type_keyword
@@ -71,6 +75,8 @@ java:
     - do
     - break
     - throw
+    - 'type_parameters <'
+    - 'type_parameters >'
 ocaml:
   flattened:
     - string
