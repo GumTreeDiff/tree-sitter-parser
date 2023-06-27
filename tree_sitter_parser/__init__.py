@@ -25,6 +25,7 @@ def init_parsers(script_dir):
             script_dir + "/tree-sitter-c",
             script_dir + "/tree-sitter-c-sharp",
             script_dir + "/tree-sitter-cmake",
+            script_dir + "/tree-sitter-go",
             script_dir + "/tree-sitter-java",
             script_dir + "/tree-sitter-javascript",
             script_dir + "/tree-sitter-ocaml/ocaml",
@@ -44,6 +45,7 @@ def init_parsers(script_dir):
         "c": Language(script_dir + "/build/languages.so", "c"),
         "csharp": Language(script_dir + "/build/languages.so", "c_sharp"),
         "cmake": Language(script_dir + "/build/languages.so", "cmake"),
+        "go": Language(script_dir +  "/build/languages.so", "go"),
         "java": Language(script_dir + "/build/languages.so", "java"),
         "javascript": Language(script_dir + "/build/languages.so", "javascript"),
         "ocaml": Language(script_dir + "/build/languages.so", "ocaml"),
@@ -100,7 +102,7 @@ def get_selector(node, config, action):
 
 
 def match(selector, node):
-    expected_types = selector.split()
+    expected_types = selector.split(' ')
     ancestor_types = collect_ancestor_types(node, len(expected_types))
     if len(ancestor_types) < len(expected_types):
         return False

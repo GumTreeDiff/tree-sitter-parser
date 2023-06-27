@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<tree type="source_file" pos="5" length="88">
+	<tree type="package_clause" pos="5" length="12">
+		<tree type="package" pos="5" length="7" label="package"/>
+		<tree type="package_identifier" pos="13" length="4" label="main"/>
+	</tree>
+	<tree type="import_declaration" pos="22" length="12">
+		<tree type="import" pos="22" length="6" label="import"/>
+		<tree type="import_spec" pos="29" length="5">
+			<tree type="interpreted_string_literal" pos="29" length="5" label="&quot;fmt&quot;"/>
+		</tree>
+	</tree>
+	<tree type="function_declaration" pos="39" length="54">
+		<tree type="func" pos="39" length="4" label="func"/>
+		<tree type="identifier" pos="44" length="4" label="main"/>
+		<tree type="parameter_list" pos="48" length="2"/>
+		<tree type="block" pos="51" length="42">
+			<tree type="call_expression" pos="61" length="26">
+				<tree type="selector_expression" pos="61" length="11">
+					<tree type="identifier" pos="61" length="3" label="fmt"/>
+					<tree type="field_identifier" pos="65" length="7" label="Println"/>
+				</tree>
+				<tree type="argument_list" pos="72" length="15">
+					<tree type="interpreted_string_literal" pos="73" length="13" label="&quot;hello world&quot;"/>
+				</tree>
+			</tree>
+		</tree>
+	</tree>
+</tree>

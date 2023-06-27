@@ -1,3 +1,14 @@
+go:
+  flattened:
+    - interpreted_string_literal
+  ignored:
+    - "\n"
+    - (
+    - )
+    - '{'
+    - '}'
+    - '.'
+  aliased: []
 java:
   flattened:
     - scoped_identifier
