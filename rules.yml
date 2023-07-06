@@ -93,6 +93,32 @@ ocaml:
     - string
   aliased: []
   ignored: []
+python:
+  flattened:
+    - string
+  aliased:
+    '==': comparison_operator
+    '<=': comparison_operator
+    '>=': comparison_operator
+    '!=': comparison_operator
+    '<': comparison_operator
+    '>': comparison_operator
+    '<>': comparison_operator
+  ignored:
+    - '('
+    - ')'
+    - '{'
+    - '}'
+    - '['
+    - ']'
+    - '.'
+    - ':'
+    - ','
+    - 'default_parameter ='
+    - 'import'
+    - 'def'
+    - 'for'
+    - 'in'
 rust:
   flattened:
     - string_literal
