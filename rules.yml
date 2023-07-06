@@ -119,6 +119,10 @@ python:
     - 'def'
     - 'for'
     - 'in'
+    - 'if'
+    - 'with'
+    - 'as'
+    - 'return'
 rust:
   flattened:
     - string_literal
