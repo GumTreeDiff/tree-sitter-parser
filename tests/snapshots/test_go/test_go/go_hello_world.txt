@@ -15,13 +15,15 @@
 		<tree type="identifier" pos="44" length="4" label="main"/>
 		<tree type="parameter_list" pos="48" length="2"/>
 		<tree type="block" pos="51" length="42">
-			<tree type="call_expression" pos="61" length="26">
-				<tree type="selector_expression" pos="61" length="11">
-					<tree type="identifier" pos="61" length="3" label="fmt"/>
-					<tree type="field_identifier" pos="65" length="7" label="Println"/>
-				</tree>
-				<tree type="argument_list" pos="72" length="15">
-					<tree type="interpreted_string_literal" pos="73" length="13" label="&quot;hello world&quot;"/>
+			<tree type="expression_statement" pos="61" length="26">
+				<tree type="call_expression" pos="61" length="26">
+					<tree type="selector_expression" pos="61" length="11">
+						<tree type="identifier" pos="61" length="3" label="fmt"/>
+						<tree type="field_identifier" pos="65" length="7" label="Println"/>
+					</tree>
+					<tree type="argument_list" pos="72" length="15">
+						<tree type="interpreted_string_literal" pos="73" length="13" label="&quot;hello world&quot;"/>
+					</tree>
 				</tree>
 			</tree>
 		</tree>
