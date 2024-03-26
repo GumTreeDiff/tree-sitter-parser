@@ -9,6 +9,7 @@ go:
     - '}'
     - '.'
   aliased: []
+  label_ignored: []
 java:
   flattened:
     - scoped_identifier
@@ -88,11 +89,13 @@ java:
     - throw
     - 'type_parameters <'
     - 'type_parameters >'
+  label_ignored: []
 ocaml:
   flattened:
     - string
   aliased: []
   ignored: []
+  label_ignored: []
 python:
   flattened:
     - string
@@ -123,6 +126,7 @@ python:
     - 'with'
     - 'as'
     - 'return'
+  label_ignored: []
 rust:
   flattened:
     - string_literal
@@ -144,3 +148,4 @@ rust:
     - ':'
     - fn
     - '->'
+  label_ignored: []

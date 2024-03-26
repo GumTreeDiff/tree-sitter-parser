@@ -4,7 +4,7 @@ from xml.dom import minidom
 from tree_sitter import Language, Parser
 
 
-EMPTY_CONFIG = {"flattened": [], "aliased": {}, "ignored": []}
+EMPTY_CONFIG = {"flattened": [], "aliased": {}, "ignored": [], "label_ignored": []}
 MAX_LABEL_SIZE = 75
 
 
@@ -79,9 +79,7 @@ def parse_and_translate(parser_lang, config, input: bytes):
 def create_newline_offsets(input: bytes):
     """
     Obtain a list of indices of all newlines in a file. The first line has offset 0.
-
     This list can be used to translate from `(line, column)` to `pos` by using ...
-
         pos = offsets[line] + column
     """
     offsets = [0]
@@ -94,6 +92,10 @@ def create_newline_offsets(input: bytes):
 
 
 def get_selector(node, config, action):
+    """
+    If there is a selector that matches the given node in the given config for the given action, return it.
+    Otherwise, return an empty string.
+    """
     for selector in config[action]:
         if match(selector, node):
             return selector
@@ -102,6 +104,9 @@ def get_selector(node, config, action):
 
 
 def match(selector, node):
+    """
+    Check if the given node matches the given selector.
+    """
     expected_types = selector.split(' ')
     ancestor_types = collect_ancestor_types(node, len(expected_types))
     if len(ancestor_types) < len(expected_types):
@@ -115,6 +120,9 @@ def match(selector, node):
 
 
 def collect_ancestor_types(node, max_level):
+    """
+    Collect the types of the ancestors of a given node up to a given maximum level.
+    """
     ancestor_types = []
     for _ in range(max_level):
         ancestor_types.append(node.type)
@@ -151,7 +159,7 @@ def to_xml_node(doc, node, config, newline_offsets):
     length = endPos - startPos
     xmlNode.setAttribute("pos", str(startPos))
     xmlNode.setAttribute("length", str(length))
-    if node.child_count == 0 or get_selector(node, config, 'flattened'):
+    if (node.child_count == 0 and not get_selector(node, config, 'label_ignored')) or get_selector(node, config, 'flattened'):
         xmlNode.setAttribute("label", node.text.decode("utf8"))
     return xmlNode
 
@@ -173,6 +181,9 @@ def pretty_print_ast(elm, out, level=0):
 
 
 def sanitize_label(raw_label):
+    """
+    Sanitize a label by removing newlines and tabs and truncating it if it is too long.
+    """
     raw_label = raw_label.replace("\n", "")
     raw_label = raw_label.replace("\t", "")
     label = (
