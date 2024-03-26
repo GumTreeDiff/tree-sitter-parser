@@ -1,5 +1,4 @@
 import os
-
 import yaml
 
 from tree_sitter_parser import EMPTY_CONFIG, init_parsers, parse_and_translate

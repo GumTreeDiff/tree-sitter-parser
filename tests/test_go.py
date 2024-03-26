@@ -1,9 +1,7 @@
 import os
-
 import yaml
 
 from tree_sitter_parser import EMPTY_CONFIG, init_parsers, parse_and_translate
-
 
 def test_go(snapshot):
     script_dir = os.path.join(os.path.abspath(os.path.dirname(os.path.realpath(__file__))), "..")
