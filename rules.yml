@@ -16,7 +16,7 @@ java:
     - integral_type
     - array_type
     - generic_type
-    - scoped_type_identifier 
+    - scoped_type_identifier
     - type_parameter
   aliased:
     +=: affectation_operator
@@ -59,14 +59,14 @@ java:
     boolean_type: type
     scoped_type_identifier: type
     enhanced_for_statement: for_statement
-    'enhanced_for_statement :': for_iterated 
+    'enhanced_for_statement :': for_iterated
     class: type_keyword
     interface: type_keyword
     enum: type_keyword
     class_body: type_body
     interface_body: type_body
     enum_body: type_body
-  ignored: 
+  ignored:
     - ;
     - '.'
     - ','
@@ -148,4 +148,125 @@ rust:
     - ':'
     - fn
     - '->'
+  label_ignored: []
+kotlin:
+  flattened: [ ]
+  aliased:
+    class: type_keyword
+    interface: type_keyword
+    class_body: type_body
+    interface_body: type_body
+    enum_class_body: type_body
+    object: type_keyword
+    return: jump_keyword
+    throw: jump_keyword
+    break: jump_keyword
+    continue: jump_keyword
+    public: modifier
+    protected: modifier
+    private: modifier
+    sealed: modifier
+    data: modifier
+    inner: modifier
+    enum: modifier
+    internal: modifier
+    annotation: modifier
+    tailrec: modifier
+    operator: modifier
+    inline: modifier
+    infix: modifier
+    external: modifier
+    override: modifier
+    abstract: modifier
+    final: modifier
+    open: modifier
+    const: modifier
+    lateinit: modifier
+    vararg: modifier
+    noinline: modifier
+    crossinline: modifier
+    reified: modifier
+    fun: keyword
+    by: keyword
+    init: keyword
+    typealias: keyword
+    super: keyword
+    typeof: keyword
+    constructor: keyword
+    dynamic: keyword
+    '>=': comparison_operator
+    '!=': comparison_operator
+    '&&': logical_operator
+    '||': logical_operator
+    ++: increment_operator
+    --: increment_operator
+    '&': bitwise_operator
+    '|': bitwise_operator
+    ^: bitwise_operator
+    +=: affectation_operator
+    -=: affectation_operator
+    '*=': affectation_operator
+    /=: affectation_operator
+    =: affectation_operator
+    '|=': affectation_operator
+    '&=': affectation_operator
+    ^=: affectation_operator
+    '-': arithmetic_operator
+    +: arithmetic_operator
+    /: arithmetic_operator
+    '*': arithmetic_operator
+    ==: comparison_operator
+    ===: comparison_operator
+    '!==': comparison_operator
+    'comparison_expression <': comparison_operator
+    'comparison_expression >': comparison_operator
+    val: property_declaration_keyword
+    var: property_declaration_keyword
+    '..': range_creation_operator
+    '..<': range_creation_operator
+    '!!': non-null_assertion_operator
+    '?.': null_safe_call_operator
+    'as': type_conversion_or_type_alias_keyword
+    'as?': null_safe_type_conversion_keyword
+    'is': type_check_operator
+    '!is': type_check_operator
+    '::': reference_extraction_operator
+    '?:': elvis_operator
+    '->': arrow
+    '@': at
+    '_': anonymous_parameter
+    '.*': import_all_identifier
+    'variance_modifier in': inverter_keyword
+    'variance_modifier out': covariance_keyword
+    'check_expression in': collection_contains
+    'check_expression !in': collection_not_contains
+    'range_test in': collection_contains
+    'range_test !in': collection_not_contains
+    'for_statement in': collection_iterated
+  ignored:
+    - ;
+    - .
+    - )
+    - (
+    - ':'
+    - ','
+    - '}'
+    - '{'
+    - $
+    - if
+    - for
+    - try
+    - catch
+    - finally
+    - else
+    - while
+    - do
+    - when
+    - import
+    - 'setter set'
+    - 'getter get'
+    - 'type_arguments <'
+    - 'type_arguments >'
+    - 'type_parameters <'
+    - 'type_parameters >'
   label_ignored: []

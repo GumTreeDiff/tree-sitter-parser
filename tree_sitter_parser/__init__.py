@@ -35,6 +35,7 @@ def init_parsers(script_dir):
             script_dir + "/tree-sitter-ruby",
             script_dir + "/tree-sitter-rust",
             script_dir + "/tree-sitter-typescript/typescript",
+            script_dir + "/tree-sitter-kotlin"
         ],
     ):
         eprint("Compiled dynamic library of parsers.")
@@ -55,6 +56,7 @@ def init_parsers(script_dir):
         "ruby": Language(script_dir + "/build/languages.so", "ruby"),
         "rust": Language(script_dir + "/build/languages.so", "rust"),
         "typescript": Language(script_dir + "/build/languages.so", "typescript"),
+        "kotlin": Language(script_dir + "/build/languages.so", "kotlin")
     }
 
 
