@@ -54,7 +54,7 @@
 					<tree type="simple_identifier" pos="113" length="2" label="tt"/>
 				</tree>
 				<tree type="property_delegate" pos="116" length="12">
-					<tree type="keyword" pos="116" length="2" label="by"/>
+					<tree type="delegate_keyword" pos="116" length="2" label="by"/>
 					<tree type="call_expression" pos="119" length="9">
 						<tree type="simple_identifier" pos="119" length="7" label="HashMap"/>
 						<tree type="call_suffix" pos="126" length="2">
@@ -72,7 +72,7 @@
 				<tree type="function_body" pos="147" length="11"/>
 			</tree>
 			<tree type="anonymous_initializer" pos="163" length="245">
-				<tree type="keyword" pos="163" length="4" label="init"/>
+				<tree type="initializer_keyword" pos="163" length="4" label="init"/>
 				<tree type="statements" pos="177" length="225">
 					<tree type="for_statement" pos="177" length="36">
 						<tree type="variable_declaration" pos="182" length="4">
@@ -171,14 +171,14 @@
 			</tree>
 			<tree type="function_declaration" pos="413" length="211">
 				<tree type="modifiers" pos="413" length="8">
-					<tree type="modifier" pos="413" length="8">
+					<tree type="class_modifier" pos="413" length="8">
 						<tree type="at" pos="413" length="1" label="@"/>
 						<tree type="user_type" pos="414" length="7">
 							<tree type="type_identifier" pos="414" length="7" label="NotNull"/>
 						</tree>
 					</tree>
 				</tree>
-				<tree type="keyword" pos="426" length="3" label="fun"/>
+				<tree type="function_keyword" pos="426" length="3" label="fun"/>
 				<tree type="simple_identifier" pos="430" length="8" label="sayHello"/>
 				<tree type="function_value_parameters" pos="438" length="2"/>
 				<tree type="function_body" pos="441" length="183">
@@ -254,7 +254,7 @@
 				<tree type="type_keyword" pos="639" length="6" label="object"/>
 				<tree type="type_body" pos="646" length="105">
 					<tree type="function_declaration" pos="656" length="89">
-						<tree type="keyword" pos="656" length="3" label="fun"/>
+						<tree type="function_keyword" pos="656" length="3" label="fun"/>
 						<tree type="simple_identifier" pos="660" length="19" label="createDefaultPerson"/>
 						<tree type="function_value_parameters" pos="679" length="2"/>
 						<tree type="user_type" pos="683" length="6">
@@ -289,7 +289,7 @@
 		</tree>
 	</tree>
 	<tree type="class_declaration" pos="754" length="18">
-		<tree type="modifier" pos="754" length="4" label="enum"/>
+		<tree type="class_modifier" pos="754" length="4" label="enum"/>
 		<tree type="type_keyword" pos="759" length="5" label="class"/>
 		<tree type="type_identifier" pos="765" length="4" label="Enum"/>
 		<tree type="type_body" pos="769" length="3"/>
@@ -305,7 +305,7 @@
 		<tree type="type_body" pos="810" length="3"/>
 	</tree>
 	<tree type="function_declaration" pos="815" length="54">
-		<tree type="keyword" pos="815" length="3" label="fun"/>
+		<tree type="function_keyword" pos="815" length="3" label="fun"/>
 		<tree type="user_type" pos="819" length="3">
 			<tree type="type_identifier" pos="819" length="3" label="Int"/>
 		</tree>
@@ -334,7 +334,7 @@
 		</tree>
 	</tree>
 	<tree type="function_declaration" pos="870" length="83">
-		<tree type="keyword" pos="870" length="3" label="fun"/>
+		<tree type="function_keyword" pos="870" length="3" label="fun"/>
 		<tree type="simple_identifier" pos="874" length="19" label="calculateCircleArea"/>
 		<tree type="function_value_parameters" pos="893" length="16">
 			<tree type="parameter" pos="894" length="14">
@@ -404,7 +404,7 @@
 		</tree>
 	</tree>
 	<tree type="function_declaration" pos="1009" length="771">
-		<tree type="keyword" pos="1009" length="3" label="fun"/>
+		<tree type="function_keyword" pos="1009" length="3" label="fun"/>
 		<tree type="simple_identifier" pos="1013" length="4" label="main"/>
 		<tree type="function_value_parameters" pos="1017" length="2"/>
 		<tree type="function_body" pos="1020" length="760">

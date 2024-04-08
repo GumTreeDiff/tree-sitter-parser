@@ -162,38 +162,41 @@ kotlin:
     throw: jump_keyword
     break: jump_keyword
     continue: jump_keyword
-    public: modifier
-    protected: modifier
-    private: modifier
-    sealed: modifier
-    data: modifier
-    inner: modifier
-    enum: modifier
-    internal: modifier
-    annotation: modifier
-    tailrec: modifier
-    operator: modifier
-    inline: modifier
-    infix: modifier
-    external: modifier
-    override: modifier
-    abstract: modifier
-    final: modifier
-    open: modifier
-    const: modifier
-    lateinit: modifier
-    vararg: modifier
-    noinline: modifier
-    crossinline: modifier
-    reified: modifier
-    fun: keyword
-    by: keyword
-    init: keyword
-    typealias: keyword
-    super: keyword
-    typeof: keyword
-    constructor: keyword
-    dynamic: keyword
+    public: visibility_modifier
+    protected: visibility_modifier
+    private: visibility_modifier
+    internal: visibility_modifier
+    sealed: class_modifier
+    data: class_modifier
+    inner: class_modifier
+    enum: class_modifier
+    annotation: class_modifier
+    tailrec: function_modifier
+    operator: function_modifier
+    inline: function_modifier
+    infix: function_modifier
+    suspend : function_modifier
+    external: function_modifier
+    open: inherit_modifier
+    abstract: inherit_modifier
+    final: inherit_modifier
+    const: property_modifier
+    override: member_modifier
+    lateinit: member_modifier
+    vararg: parameter_modifier
+    noinline: parameter_modifier
+    crossinline: parameter_modifier
+    reified: reification_modifier
+    expect: platform_modifier
+    actual: platform_modifier
+    fun: function_keyword
+    by: delegate_keyword
+    init: initializer_keyword
+    typealias: typealias_keyword
+    super: super_expression_keyword
+    typeof: reserved_keyword
+    constructor: constructor_keyword
+    dynamic: dynamic_keyword
     '>=': comparison_operator
     '!=': comparison_operator
     '&&': logical_operator
