@@ -1,0 +1,762 @@
+<?xml version="1.0" ?>
+<tree type="source_file" pos="0" length="1780">
+	<tree type="import_list" pos="0" length="45">
+		<tree type="import_header" pos="0" length="20">
+			<tree type="identifier" pos="7" length="11">
+				<tree type="simple_identifier" pos="7" length="6" label="kotlin"/>
+				<tree type="simple_identifier" pos="14" length="4" label="math"/>
+			</tree>
+			<tree type="import_all_identifier" pos="18" length="2" label=".*"/>
+		</tree>
+		<tree type="import_header" pos="21" length="22">
+			<tree type="identifier" pos="28" length="15">
+				<tree type="simple_identifier" pos="28" length="6" label="kotlin"/>
+				<tree type="simple_identifier" pos="35" length="4" label="math"/>
+				<tree type="simple_identifier" pos="40" length="3" label="exp"/>
+			</tree>
+		</tree>
+	</tree>
+	<tree type="class_declaration" pos="45" length="708">
+		<tree type="type_keyword" pos="45" length="5" label="class"/>
+		<tree type="type_identifier" pos="51" length="6" label="Person"/>
+		<tree type="type_parameters" pos="58" length="3">
+			<tree type="type_parameter" pos="59" length="1">
+				<tree type="type_identifier" pos="59" length="1" label="T"/>
+			</tree>
+		</tree>
+		<tree type="primary_constructor" pos="62" length="40">
+			<tree type="class_parameter" pos="63" length="16">
+				<tree type="property_declaration_keyword" pos="63" length="3" label="val"/>
+				<tree type="simple_identifier" pos="67" length="4" label="name"/>
+				<tree type="user_type" pos="73" length="6">
+					<tree type="type_identifier" pos="73" length="6" label="String"/>
+				</tree>
+			</tree>
+			<tree type="class_parameter" pos="81" length="12">
+				<tree type="property_declaration_keyword" pos="81" length="3" label="var"/>
+				<tree type="simple_identifier" pos="85" length="3" label="age"/>
+				<tree type="user_type" pos="90" length="3">
+					<tree type="type_identifier" pos="90" length="3" label="Int"/>
+				</tree>
+			</tree>
+			<tree type="class_parameter" pos="94" length="7">
+				<tree type="property_declaration_keyword" pos="94" length="3" label="val"/>
+				<tree type="simple_identifier" pos="98" length="1" label="t"/>
+				<tree type="user_type" pos="100" length="1">
+					<tree type="type_identifier" pos="100" length="1" label="T"/>
+				</tree>
+			</tree>
+		</tree>
+		<tree type="type_body" pos="103" length="650">
+			<tree type="property_declaration" pos="109" length="19">
+				<tree type="property_declaration_keyword" pos="109" length="3" label="val"/>
+				<tree type="variable_declaration" pos="113" length="2">
+					<tree type="simple_identifier" pos="113" length="2" label="tt"/>
+				</tree>
+				<tree type="property_delegate" pos="116" length="12">
+					<tree type="delegate_keyword" pos="116" length="2" label="by"/>
+					<tree type="call_expression" pos="119" length="9">
+						<tree type="simple_identifier" pos="119" length="7" label="HashMap"/>
+						<tree type="call_suffix" pos="126" length="2">
+							<tree type="value_arguments" pos="126" length="2"/>
+						</tree>
+					</tree>
+				</tree>
+			</tree>
+			<tree type="setter" pos="137" length="21">
+				<tree type="parameter_with_optional_type" pos="141" length="5">
+					<tree type="simple_identifier" pos="141" length="5">
+						<tree type="value" pos="141" length="5" label="value"/>
+					</tree>
+				</tree>
+				<tree type="function_body" pos="147" length="11"/>
+			</tree>
+			<tree type="anonymous_initializer" pos="163" length="245">
+				<tree type="initializer_keyword" pos="163" length="4" label="init"/>
+				<tree type="statements" pos="177" length="225">
+					<tree type="for_statement" pos="177" length="36">
+						<tree type="variable_declaration" pos="182" length="4">
+							<tree type="simple_identifier" pos="182" length="4" label="item"/>
+						</tree>
+						<tree type="collection_iterated" pos="187" length="2" label="in"/>
+						<tree type="simple_identifier" pos="190" length="10" label="collection"/>
+						<tree type="control_structure_body" pos="202" length="11">
+							<tree type="call_expression" pos="202" length="11">
+								<tree type="simple_identifier" pos="202" length="5" label="print"/>
+								<tree type="call_suffix" pos="207" length="6">
+									<tree type="value_arguments" pos="207" length="6">
+										<tree type="value_argument" pos="208" length="4">
+											<tree type="simple_identifier" pos="208" length="4" label="item"/>
+										</tree>
+									</tree>
+								</tree>
+							</tree>
+						</tree>
+					</tree>
+					<tree type="when_expression" pos="222" length="61">
+						<tree type="when_subject" pos="226" length="3">
+							<tree type="simple_identifier" pos="227" length="1" label="k"/>
+						</tree>
+						<tree type="when_entry" pos="243" length="30">
+							<tree type="when_condition" pos="243" length="13">
+								<tree type="range_test" pos="243" length="13">
+									<tree type="collection_contains" pos="243" length="2" label="in"/>
+									<tree type="simple_identifier" pos="246" length="10" label="collection"/>
+								</tree>
+							</tree>
+							<tree type="arrow" pos="256" length="2" label="-&gt;"/>
+							<tree type="control_structure_body" pos="258" length="15"/>
+						</tree>
+					</tree>
+					<tree type="try_expression" pos="292" length="34">
+						<tree type="catch_block" pos="306" length="20">
+							<tree type="simple_identifier" pos="312" length="1" label="e"/>
+							<tree type="user_type" pos="314" length="9">
+								<tree type="type_identifier" pos="314" length="9" label="Exception"/>
+							</tree>
+						</tree>
+					</tree>
+					<tree type="call_expression" pos="335" length="25">
+						<tree type="simple_identifier" pos="335" length="7" label="HashMap"/>
+						<tree type="call_suffix" pos="342" length="18">
+							<tree type="type_arguments" pos="342" length="16">
+								<tree type="type_projection" pos="343" length="6">
+									<tree type="type_projection_modifiers" pos="343" length="2">
+										<tree type="variance_modifier" pos="343" length="2">
+											<tree type="inverter_keyword" pos="343" length="2" label="in"/>
+										</tree>
+									</tree>
+									<tree type="user_type" pos="346" length="3">
+										<tree type="type_identifier" pos="346" length="3" label="Any"/>
+									</tree>
+								</tree>
+								<tree type="type_projection" pos="350" length="7">
+									<tree type="type_projection_modifiers" pos="350" length="3">
+										<tree type="variance_modifier" pos="350" length="3">
+											<tree type="covariance_keyword" pos="350" length="3" label="out"/>
+										</tree>
+									</tree>
+									<tree type="user_type" pos="354" length="3">
+										<tree type="type_identifier" pos="354" length="3" label="Any"/>
+									</tree>
+								</tree>
+							</tree>
+							<tree type="value_arguments" pos="358" length="2"/>
+						</tree>
+					</tree>
+					<tree type="if_expression" pos="369" length="33">
+						<tree type="check_expression" pos="372" length="18">
+							<tree type="integer_literal" pos="372" length="1" label="1"/>
+							<tree type="collection_contains" pos="374" length="2" label="in"/>
+							<tree type="call_expression" pos="377" length="13">
+								<tree type="simple_identifier" pos="377" length="6" label="listOf"/>
+								<tree type="call_suffix" pos="383" length="7">
+									<tree type="value_arguments" pos="383" length="7">
+										<tree type="value_argument" pos="384" length="1">
+											<tree type="integer_literal" pos="384" length="1" label="1"/>
+										</tree>
+										<tree type="value_argument" pos="386" length="1">
+											<tree type="integer_literal" pos="386" length="1" label="2"/>
+										</tree>
+										<tree type="value_argument" pos="388" length="1">
+											<tree type="integer_literal" pos="388" length="1" label="3"/>
+										</tree>
+									</tree>
+								</tree>
+							</tree>
+						</tree>
+						<tree type="control_structure_body" pos="391" length="11"/>
+					</tree>
+				</tree>
+			</tree>
+			<tree type="function_declaration" pos="413" length="211">
+				<tree type="modifiers" pos="413" length="8">
+					<tree type="class_modifier" pos="413" length="8">
+						<tree type="at" pos="413" length="1" label="@"/>
+						<tree type="user_type" pos="414" length="7">
+							<tree type="type_identifier" pos="414" length="7" label="NotNull"/>
+						</tree>
+					</tree>
+				</tree>
+				<tree type="function_keyword" pos="426" length="3" label="fun"/>
+				<tree type="simple_identifier" pos="430" length="8" label="sayHello"/>
+				<tree type="function_value_parameters" pos="438" length="2"/>
+				<tree type="function_body" pos="441" length="183">
+					<tree type="statements" pos="451" length="167">
+						<tree type="as_expression" pos="451" length="13">
+							<tree type="simple_identifier" pos="451" length="3" label="age"/>
+							<tree type="type_conversion_or_type_alias_keyword" pos="455" length="2" label="as"/>
+							<tree type="user_type" pos="458" length="6">
+								<tree type="type_identifier" pos="458" length="6" label="Number"/>
+							</tree>
+						</tree>
+						<tree type="as_expression" pos="473" length="12">
+							<tree type="simple_identifier" pos="473" length="1" label="t"/>
+							<tree type="null_safe_type_conversion_keyword" pos="475" length="3" label="as?"/>
+							<tree type="user_type" pos="479" length="6">
+								<tree type="type_identifier" pos="479" length="6" label="String"/>
+							</tree>
+						</tree>
+						<tree type="check_expression" pos="494" length="10">
+							<tree type="simple_identifier" pos="494" length="3" label="age"/>
+							<tree type="type_check_operator" pos="498" length="2" label="is"/>
+							<tree type="user_type" pos="501" length="3">
+								<tree type="type_identifier" pos="501" length="3" label="Int"/>
+							</tree>
+						</tree>
+						<tree type="check_expression" pos="513" length="11">
+							<tree type="simple_identifier" pos="513" length="3" label="age"/>
+							<tree type="type_check_operator" pos="517" length="3" label="!is"/>
+							<tree type="user_type" pos="521" length="3">
+								<tree type="type_identifier" pos="521" length="3" label="Int"/>
+							</tree>
+						</tree>
+						<tree type="call_expression" pos="533" length="42">
+							<tree type="navigation_expression" pos="533" length="9">
+								<tree type="simple_identifier" pos="533" length="4" label="name"/>
+								<tree type="navigation_suffix" pos="537" length="5">
+									<tree type="null_safe_call_operator" pos="537" length="2" label="?."/>
+									<tree type="simple_identifier" pos="539" length="3" label="let"/>
+								</tree>
+							</tree>
+							<tree type="call_suffix" pos="542" length="33">
+								<tree type="annotated_lambda" pos="542" length="33">
+									<tree type="lambda_literal" pos="542" length="33">
+										<tree type="statements" pos="556" length="9">
+											<tree type="call_expression" pos="556" length="9">
+												<tree type="simple_identifier" pos="556" length="7" label="println"/>
+												<tree type="call_suffix" pos="563" length="2">
+													<tree type="value_arguments" pos="563" length="2"/>
+												</tree>
+											</tree>
+										</tree>
+									</tree>
+								</tree>
+							</tree>
+						</tree>
+						<tree type="call_expression" pos="584" length="34">
+							<tree type="simple_identifier" pos="584" length="7" label="println"/>
+							<tree type="call_suffix" pos="591" length="27">
+								<tree type="value_arguments" pos="591" length="27">
+									<tree type="value_argument" pos="592" length="25">
+										<tree type="string_literal" pos="592" length="25">
+											<tree type="interpolated_identifier" pos="612" length="4" label="name"/>
+										</tree>
+									</tree>
+								</tree>
+							</tree>
+						</tree>
+					</tree>
+				</tree>
+			</tree>
+			<tree type="companion_object" pos="629" length="122">
+				<tree type="companion" pos="629" length="9" label="companion"/>
+				<tree type="type_keyword" pos="639" length="6" label="object"/>
+				<tree type="type_body" pos="646" length="105">
+					<tree type="function_declaration" pos="656" length="89">
+						<tree type="function_keyword" pos="656" length="3" label="fun"/>
+						<tree type="simple_identifier" pos="660" length="19" label="createDefaultPerson"/>
+						<tree type="function_value_parameters" pos="679" length="2"/>
+						<tree type="user_type" pos="683" length="6">
+							<tree type="type_identifier" pos="683" length="6" label="Person"/>
+						</tree>
+						<tree type="function_body" pos="690" length="55">
+							<tree type="statements" pos="704" length="31">
+								<tree type="jump_expression" pos="704" length="31">
+									<tree type="jump_keyword" pos="704" length="6" label="return"/>
+									<tree type="postfix_expression" pos="711" length="24">
+										<tree type="call_expression" pos="711" length="22">
+											<tree type="simple_identifier" pos="711" length="6" label="Person"/>
+											<tree type="call_suffix" pos="717" length="16">
+												<tree type="value_arguments" pos="717" length="16">
+													<tree type="value_argument" pos="718" length="10">
+														<tree type="string_literal" pos="718" length="10" label="&quot;John Doe&quot;"/>
+													</tree>
+													<tree type="value_argument" pos="730" length="2">
+														<tree type="integer_literal" pos="730" length="2" label="30"/>
+													</tree>
+												</tree>
+											</tree>
+										</tree>
+										<tree type="non-null_assertion_operator" pos="733" length="2" label="!!"/>
+									</tree>
+								</tree>
+							</tree>
+						</tree>
+					</tree>
+				</tree>
+			</tree>
+		</tree>
+	</tree>
+	<tree type="class_declaration" pos="754" length="18">
+		<tree type="class_modifier" pos="754" length="4" label="enum"/>
+		<tree type="type_keyword" pos="759" length="5" label="class"/>
+		<tree type="type_identifier" pos="765" length="4" label="Enum"/>
+		<tree type="type_body" pos="769" length="3"/>
+	</tree>
+	<tree type="class_declaration" pos="773" length="23">
+		<tree type="type_keyword" pos="773" length="9" label="interface"/>
+		<tree type="type_identifier" pos="783" length="9" label="Interface"/>
+		<tree type="type_body" pos="793" length="3"/>
+	</tree>
+	<tree type="object_declaration" pos="797" length="16">
+		<tree type="type_keyword" pos="797" length="6" label="object"/>
+		<tree type="type_identifier" pos="804" length="6" label="Object"/>
+		<tree type="type_body" pos="810" length="3"/>
+	</tree>
+	<tree type="function_declaration" pos="815" length="54">
+		<tree type="function_keyword" pos="815" length="3" label="fun"/>
+		<tree type="user_type" pos="819" length="3">
+			<tree type="type_identifier" pos="819" length="3" label="Int"/>
+		</tree>
+		<tree type="simple_identifier" pos="823" length="6" label="isEven"/>
+		<tree type="function_value_parameters" pos="829" length="2"/>
+		<tree type="user_type" pos="833" length="7">
+			<tree type="type_identifier" pos="833" length="7" label="Boolean"/>
+		</tree>
+		<tree type="function_body" pos="841" length="28">
+			<tree type="statements" pos="847" length="20">
+				<tree type="jump_expression" pos="847" length="20">
+					<tree type="jump_keyword" pos="847" length="6" label="return"/>
+					<tree type="equality_expression" pos="854" length="13">
+						<tree type="multiplicative_expression" pos="854" length="8">
+							<tree type="this_expression" pos="854" length="4">
+								<tree type="this" pos="854" length="4" label="this"/>
+							</tree>
+							<tree type="%" pos="859" length="1" label="%"/>
+							<tree type="integer_literal" pos="861" length="1" label="2"/>
+						</tree>
+						<tree type="comparison_operator" pos="863" length="2" label="=="/>
+						<tree type="integer_literal" pos="866" length="1" label="0"/>
+					</tree>
+				</tree>
+			</tree>
+		</tree>
+	</tree>
+	<tree type="function_declaration" pos="870" length="83">
+		<tree type="function_keyword" pos="870" length="3" label="fun"/>
+		<tree type="simple_identifier" pos="874" length="19" label="calculateCircleArea"/>
+		<tree type="function_value_parameters" pos="893" length="16">
+			<tree type="parameter" pos="894" length="14">
+				<tree type="simple_identifier" pos="894" length="6" label="radius"/>
+				<tree type="user_type" pos="902" length="6">
+					<tree type="type_identifier" pos="902" length="6" label="Double"/>
+				</tree>
+			</tree>
+		</tree>
+		<tree type="user_type" pos="911" length="6">
+			<tree type="type_identifier" pos="911" length="6" label="Double"/>
+		</tree>
+		<tree type="function_body" pos="918" length="35">
+			<tree type="statements" pos="924" length="27">
+				<tree type="jump_expression" pos="924" length="27">
+					<tree type="jump_keyword" pos="924" length="6" label="return"/>
+					<tree type="multiplicative_expression" pos="931" length="20">
+						<tree type="multiplicative_expression" pos="931" length="11">
+							<tree type="simple_identifier" pos="931" length="2" label="PI"/>
+							<tree type="arithmetic_operator" pos="934" length="1" label="*"/>
+							<tree type="simple_identifier" pos="936" length="6" label="radius"/>
+						</tree>
+						<tree type="arithmetic_operator" pos="943" length="1" label="*"/>
+						<tree type="simple_identifier" pos="945" length="6" label="radius"/>
+					</tree>
+				</tree>
+			</tree>
+		</tree>
+	</tree>
+	<tree type="property_declaration" pos="954" length="53">
+		<tree type="property_declaration_keyword" pos="954" length="3" label="val"/>
+		<tree type="variable_declaration" pos="958" length="20">
+			<tree type="simple_identifier" pos="958" length="6" label="square"/>
+			<tree type="function_type" pos="966" length="12">
+				<tree type="function_type_parameters" pos="966" length="5">
+					<tree type="user_type" pos="967" length="3">
+						<tree type="type_identifier" pos="967" length="3" label="Int"/>
+					</tree>
+				</tree>
+				<tree type="arrow" pos="972" length="2" label="-&gt;"/>
+				<tree type="user_type" pos="975" length="3">
+					<tree type="type_identifier" pos="975" length="3" label="Int"/>
+				</tree>
+			</tree>
+		</tree>
+		<tree type="affectation_operator" pos="979" length="1" label="="/>
+		<tree type="lambda_literal" pos="981" length="26">
+			<tree type="lambda_parameters" pos="983" length="5">
+				<tree type="variable_declaration" pos="983" length="5">
+					<tree type="simple_identifier" pos="983" length="5">
+						<tree type="value" pos="983" length="5" label="value"/>
+					</tree>
+				</tree>
+			</tree>
+			<tree type="arrow" pos="989" length="2" label="-&gt;"/>
+			<tree type="statements" pos="992" length="13">
+				<tree type="multiplicative_expression" pos="992" length="13">
+					<tree type="simple_identifier" pos="992" length="5">
+						<tree type="value" pos="992" length="5" label="value"/>
+					</tree>
+					<tree type="arithmetic_operator" pos="998" length="1" label="*"/>
+					<tree type="simple_identifier" pos="1000" length="5">
+						<tree type="value" pos="1000" length="5" label="value"/>
+					</tree>
+				</tree>
+			</tree>
+		</tree>
+	</tree>
+	<tree type="function_declaration" pos="1009" length="771">
+		<tree type="function_keyword" pos="1009" length="3" label="fun"/>
+		<tree type="simple_identifier" pos="1013" length="4" label="main"/>
+		<tree type="function_value_parameters" pos="1017" length="2"/>
+		<tree type="function_body" pos="1020" length="760">
+			<tree type="statements" pos="1026" length="752">
+				<tree type="property_declaration" pos="1026" length="38">
+					<tree type="property_declaration_keyword" pos="1026" length="3" label="val"/>
+					<tree type="variable_declaration" pos="1030" length="15">
+						<tree type="simple_identifier" pos="1030" length="7" label="message"/>
+						<tree type="user_type" pos="1039" length="6">
+							<tree type="type_identifier" pos="1039" length="6" label="String"/>
+						</tree>
+					</tree>
+					<tree type="affectation_operator" pos="1046" length="1" label="="/>
+					<tree type="string_literal" pos="1048" length="16" label="&quot;Hello, Kotlin!&quot;"/>
+				</tree>
+				<tree type="property_declaration" pos="1069" length="19">
+					<tree type="property_declaration_keyword" pos="1069" length="3" label="var"/>
+					<tree type="variable_declaration" pos="1073" length="10">
+						<tree type="simple_identifier" pos="1073" length="5" label="count"/>
+						<tree type="user_type" pos="1080" length="3">
+							<tree type="type_identifier" pos="1080" length="3" label="Int"/>
+						</tree>
+					</tree>
+					<tree type="affectation_operator" pos="1084" length="1" label="="/>
+					<tree type="integer_literal" pos="1086" length="2" label="10"/>
+				</tree>
+				<tree type="call_expression" pos="1093" length="16">
+					<tree type="simple_identifier" pos="1093" length="7" label="println"/>
+					<tree type="call_suffix" pos="1100" length="9">
+						<tree type="value_arguments" pos="1100" length="9">
+							<tree type="value_argument" pos="1101" length="7">
+								<tree type="simple_identifier" pos="1101" length="7" label="message"/>
+							</tree>
+						</tree>
+					</tree>
+				</tree>
+				<tree type="assignment" pos="1114" length="10">
+					<tree type="directly_assignable_expression" pos="1114" length="5">
+						<tree type="simple_identifier" pos="1114" length="5" label="count"/>
+					</tree>
+					<tree type="affectation_operator" pos="1120" length="2" label="+="/>
+					<tree type="integer_literal" pos="1123" length="1" label="5"/>
+				</tree>
+				<tree type="call_expression" pos="1129" length="14">
+					<tree type="simple_identifier" pos="1129" length="7" label="println"/>
+					<tree type="call_suffix" pos="1136" length="7">
+						<tree type="value_arguments" pos="1136" length="7">
+							<tree type="value_argument" pos="1137" length="5">
+								<tree type="simple_identifier" pos="1137" length="5" label="count"/>
+							</tree>
+						</tree>
+					</tree>
+				</tree>
+				<tree type="if_expression" pos="1148" length="170">
+					<tree type="comparison_expression" pos="1152" length="9">
+						<tree type="simple_identifier" pos="1152" length="5" label="count"/>
+						<tree type="comparison_operator" pos="1158" length="1" label="&gt;"/>
+						<tree type="integer_literal" pos="1160" length="1" label="0"/>
+					</tree>
+					<tree type="control_structure_body" pos="1163" length="44">
+						<tree type="statements" pos="1173" length="28">
+							<tree type="call_expression" pos="1173" length="28">
+								<tree type="simple_identifier" pos="1173" length="7" label="println"/>
+								<tree type="call_suffix" pos="1180" length="21">
+									<tree type="value_arguments" pos="1180" length="21">
+										<tree type="value_argument" pos="1181" length="19">
+											<tree type="string_literal" pos="1181" length="19" label="&quot;Count is positive&quot;"/>
+										</tree>
+									</tree>
+								</tree>
+							</tree>
+						</tree>
+					</tree>
+					<tree type="control_structure_body" pos="1213" length="105">
+						<tree type="if_expression" pos="1213" length="105">
+							<tree type="comparison_expression" pos="1217" length="9">
+								<tree type="simple_identifier" pos="1217" length="5" label="count"/>
+								<tree type="comparison_operator" pos="1223" length="1" label="&lt;"/>
+								<tree type="integer_literal" pos="1225" length="1" label="0"/>
+							</tree>
+							<tree type="control_structure_body" pos="1228" length="44">
+								<tree type="statements" pos="1238" length="28">
+									<tree type="call_expression" pos="1238" length="28">
+										<tree type="simple_identifier" pos="1238" length="7" label="println"/>
+										<tree type="call_suffix" pos="1245" length="21">
+											<tree type="value_arguments" pos="1245" length="21">
+												<tree type="value_argument" pos="1246" length="19">
+													<tree type="string_literal" pos="1246" length="19" label="&quot;Count is negative&quot;"/>
+												</tree>
+											</tree>
+										</tree>
+									</tree>
+								</tree>
+							</tree>
+							<tree type="control_structure_body" pos="1278" length="40">
+								<tree type="statements" pos="1288" length="24">
+									<tree type="call_expression" pos="1288" length="24">
+										<tree type="simple_identifier" pos="1288" length="7" label="println"/>
+										<tree type="call_suffix" pos="1295" length="17">
+											<tree type="value_arguments" pos="1295" length="17">
+												<tree type="value_argument" pos="1296" length="15">
+													<tree type="string_literal" pos="1296" length="15" label="&quot;Count is zero&quot;"/>
+												</tree>
+											</tree>
+										</tree>
+									</tree>
+								</tree>
+							</tree>
+						</tree>
+					</tree>
+				</tree>
+				<tree type="for_statement" pos="1323" length="42">
+					<tree type="variable_declaration" pos="1328" length="1">
+						<tree type="simple_identifier" pos="1328" length="1" label="i"/>
+					</tree>
+					<tree type="collection_iterated" pos="1330" length="2" label="in"/>
+					<tree type="range_expression" pos="1333" length="4">
+						<tree type="integer_literal" pos="1333" length="1" label="1"/>
+						<tree type="range_creation_operator" pos="1334" length="2" label=".."/>
+						<tree type="integer_literal" pos="1336" length="1" label="5"/>
+					</tree>
+					<tree type="control_structure_body" pos="1339" length="26">
+						<tree type="statements" pos="1349" length="10">
+							<tree type="call_expression" pos="1349" length="10">
+								<tree type="simple_identifier" pos="1349" length="7" label="println"/>
+								<tree type="call_suffix" pos="1356" length="3">
+									<tree type="value_arguments" pos="1356" length="3">
+										<tree type="value_argument" pos="1357" length="1">
+											<tree type="simple_identifier" pos="1357" length="1" label="i"/>
+										</tree>
+									</tree>
+								</tree>
+							</tree>
+						</tree>
+					</tree>
+				</tree>
+				<tree type="property_declaration" pos="1370" length="46">
+					<tree type="property_declaration_keyword" pos="1370" length="3" label="val"/>
+					<tree type="variable_declaration" pos="1374" length="18">
+						<tree type="simple_identifier" pos="1374" length="7" label="numbers"/>
+						<tree type="user_type" pos="1383" length="9">
+							<tree type="type_identifier" pos="1383" length="4" label="List"/>
+							<tree type="type_arguments" pos="1387" length="5">
+								<tree type="type_projection" pos="1388" length="3">
+									<tree type="user_type" pos="1388" length="3">
+										<tree type="type_identifier" pos="1388" length="3" label="Int"/>
+									</tree>
+								</tree>
+							</tree>
+						</tree>
+					</tree>
+					<tree type="affectation_operator" pos="1393" length="1" label="="/>
+					<tree type="call_expression" pos="1395" length="21">
+						<tree type="simple_identifier" pos="1395" length="6" label="listOf"/>
+						<tree type="call_suffix" pos="1401" length="15">
+							<tree type="value_arguments" pos="1401" length="15">
+								<tree type="value_argument" pos="1402" length="1">
+									<tree type="integer_literal" pos="1402" length="1" label="1"/>
+								</tree>
+								<tree type="value_argument" pos="1405" length="1">
+									<tree type="integer_literal" pos="1405" length="1" label="2"/>
+								</tree>
+								<tree type="value_argument" pos="1408" length="1">
+									<tree type="integer_literal" pos="1408" length="1" label="3"/>
+								</tree>
+								<tree type="value_argument" pos="1411" length="1">
+									<tree type="integer_literal" pos="1411" length="1" label="4"/>
+								</tree>
+								<tree type="value_argument" pos="1414" length="1">
+									<tree type="integer_literal" pos="1414" length="1" label="5"/>
+								</tree>
+							</tree>
+						</tree>
+					</tree>
+				</tree>
+				<tree type="property_declaration" pos="1421" length="43">
+					<tree type="property_declaration_keyword" pos="1421" length="3" label="val"/>
+					<tree type="variable_declaration" pos="1425" length="14">
+						<tree type="simple_identifier" pos="1425" length="14" label="doubledNumbers"/>
+					</tree>
+					<tree type="affectation_operator" pos="1440" length="1" label="="/>
+					<tree type="call_expression" pos="1442" length="22">
+						<tree type="navigation_expression" pos="1442" length="11">
+							<tree type="simple_identifier" pos="1442" length="7" label="numbers"/>
+							<tree type="navigation_suffix" pos="1449" length="4">
+								<tree type="simple_identifier" pos="1450" length="3" label="map"/>
+							</tree>
+						</tree>
+						<tree type="call_suffix" pos="1454" length="10">
+							<tree type="annotated_lambda" pos="1454" length="10">
+								<tree type="lambda_literal" pos="1454" length="10">
+									<tree type="statements" pos="1456" length="6">
+										<tree type="multiplicative_expression" pos="1456" length="6">
+											<tree type="simple_identifier" pos="1456" length="2" label="it"/>
+											<tree type="arithmetic_operator" pos="1459" length="1" label="*"/>
+											<tree type="integer_literal" pos="1461" length="1" label="2"/>
+										</tree>
+									</tree>
+								</tree>
+							</tree>
+						</tree>
+					</tree>
+				</tree>
+				<tree type="call_expression" pos="1469" length="23">
+					<tree type="simple_identifier" pos="1469" length="7" label="println"/>
+					<tree type="call_suffix" pos="1476" length="16">
+						<tree type="value_arguments" pos="1476" length="16">
+							<tree type="value_argument" pos="1477" length="14">
+								<tree type="simple_identifier" pos="1477" length="14" label="doubledNumbers"/>
+							</tree>
+						</tree>
+					</tree>
+				</tree>
+				<tree type="property_declaration" pos="1497" length="32">
+					<tree type="property_declaration_keyword" pos="1497" length="3" label="val"/>
+					<tree type="variable_declaration" pos="1501" length="6">
+						<tree type="simple_identifier" pos="1501" length="6" label="person"/>
+					</tree>
+					<tree type="affectation_operator" pos="1508" length="1" label="="/>
+					<tree type="call_expression" pos="1510" length="19">
+						<tree type="simple_identifier" pos="1510" length="6" label="Person"/>
+						<tree type="call_suffix" pos="1516" length="13">
+							<tree type="value_arguments" pos="1516" length="13">
+								<tree type="value_argument" pos="1517" length="7">
+									<tree type="string_literal" pos="1517" length="7" label="&quot;Alice&quot;"/>
+								</tree>
+								<tree type="value_argument" pos="1526" length="2">
+									<tree type="integer_literal" pos="1526" length="2" label="25"/>
+								</tree>
+							</tree>
+						</tree>
+					</tree>
+				</tree>
+				<tree type="call_expression" pos="1534" length="17">
+					<tree type="navigation_expression" pos="1534" length="15">
+						<tree type="simple_identifier" pos="1534" length="6" label="person"/>
+						<tree type="navigation_suffix" pos="1540" length="9">
+							<tree type="simple_identifier" pos="1541" length="8" label="sayHello"/>
+						</tree>
+					</tree>
+					<tree type="call_suffix" pos="1549" length="2">
+						<tree type="value_arguments" pos="1549" length="2"/>
+					</tree>
+				</tree>
+				<tree type="property_declaration" pos="1556" length="48">
+					<tree type="property_declaration_keyword" pos="1556" length="3" label="val"/>
+					<tree type="variable_declaration" pos="1560" length="13">
+						<tree type="simple_identifier" pos="1560" length="13" label="defaultPerson"/>
+					</tree>
+					<tree type="affectation_operator" pos="1574" length="1" label="="/>
+					<tree type="call_expression" pos="1576" length="28">
+						<tree type="navigation_expression" pos="1576" length="26">
+							<tree type="simple_identifier" pos="1576" length="6" label="Person"/>
+							<tree type="navigation_suffix" pos="1582" length="20">
+								<tree type="simple_identifier" pos="1583" length="19" label="createDefaultPerson"/>
+							</tree>
+						</tree>
+						<tree type="call_suffix" pos="1602" length="2">
+							<tree type="value_arguments" pos="1602" length="2"/>
+						</tree>
+					</tree>
+				</tree>
+				<tree type="call_expression" pos="1609" length="27">
+					<tree type="simple_identifier" pos="1609" length="7" label="println"/>
+					<tree type="call_suffix" pos="1616" length="20">
+						<tree type="value_arguments" pos="1616" length="20">
+							<tree type="value_argument" pos="1617" length="18">
+								<tree type="navigation_expression" pos="1617" length="18">
+									<tree type="simple_identifier" pos="1617" length="13" label="defaultPerson"/>
+									<tree type="navigation_suffix" pos="1630" length="5">
+										<tree type="simple_identifier" pos="1631" length="4" label="name"/>
+									</tree>
+								</tree>
+							</tree>
+						</tree>
+					</tree>
+				</tree>
+				<tree type="call_expression" pos="1641" length="20">
+					<tree type="simple_identifier" pos="1641" length="7" label="println"/>
+					<tree type="call_suffix" pos="1648" length="13">
+						<tree type="value_arguments" pos="1648" length="13">
+							<tree type="value_argument" pos="1649" length="11">
+								<tree type="call_expression" pos="1649" length="11">
+									<tree type="navigation_expression" pos="1649" length="9">
+										<tree type="integer_literal" pos="1649" length="2" label="10"/>
+										<tree type="navigation_suffix" pos="1651" length="7">
+											<tree type="simple_identifier" pos="1652" length="6" label="isEven"/>
+										</tree>
+									</tree>
+									<tree type="call_suffix" pos="1658" length="2">
+										<tree type="value_arguments" pos="1658" length="2"/>
+									</tree>
+								</tree>
+							</tree>
+						</tree>
+					</tree>
+				</tree>
+				<tree type="property_declaration" pos="1666" length="41">
+					<tree type="property_declaration_keyword" pos="1666" length="3" label="val"/>
+					<tree type="variable_declaration" pos="1670" length="10">
+						<tree type="simple_identifier" pos="1670" length="10" label="circleArea"/>
+					</tree>
+					<tree type="affectation_operator" pos="1681" length="1" label="="/>
+					<tree type="call_expression" pos="1683" length="24">
+						<tree type="simple_identifier" pos="1683" length="19" label="calculateCircleArea"/>
+						<tree type="call_suffix" pos="1702" length="5">
+							<tree type="value_arguments" pos="1702" length="5">
+								<tree type="value_argument" pos="1703" length="3">
+									<tree type="real_literal" pos="1703" length="3" label="2.5"/>
+								</tree>
+							</tree>
+						</tree>
+					</tree>
+				</tree>
+				<tree type="call_expression" pos="1712" length="19">
+					<tree type="simple_identifier" pos="1712" length="7" label="println"/>
+					<tree type="call_suffix" pos="1719" length="12">
+						<tree type="value_arguments" pos="1719" length="12">
+							<tree type="value_argument" pos="1720" length="10">
+								<tree type="simple_identifier" pos="1720" length="10" label="circleArea"/>
+							</tree>
+						</tree>
+					</tree>
+				</tree>
+				<tree type="property_declaration" pos="1736" length="22">
+					<tree type="property_declaration_keyword" pos="1736" length="3" label="val"/>
+					<tree type="variable_declaration" pos="1740" length="6">
+						<tree type="simple_identifier" pos="1740" length="6" label="result"/>
+					</tree>
+					<tree type="affectation_operator" pos="1747" length="1" label="="/>
+					<tree type="call_expression" pos="1749" length="9">
+						<tree type="simple_identifier" pos="1749" length="6" label="square"/>
+						<tree type="call_suffix" pos="1755" length="3">
+							<tree type="value_arguments" pos="1755" length="3">
+								<tree type="value_argument" pos="1756" length="1">
+									<tree type="integer_literal" pos="1756" length="1" label="5"/>
+								</tree>
+							</tree>
+						</tree>
+					</tree>
+				</tree>
+				<tree type="call_expression" pos="1763" length="15">
+					<tree type="simple_identifier" pos="1763" length="7" label="println"/>
+					<tree type="call_suffix" pos="1770" length="8">
+						<tree type="value_arguments" pos="1770" length="8">
+							<tree type="value_argument" pos="1771" length="6">
+								<tree type="simple_identifier" pos="1771" length="6" label="result"/>
+							</tree>
+						</tree>
+					</tree>
+				</tree>
+			</tree>
+		</tree>
+	</tree>
+</tree>
