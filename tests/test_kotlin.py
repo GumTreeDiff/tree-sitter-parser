@@ -11,7 +11,7 @@ def test_class_definition(snapshot):
     with open(rules_file, "r") as stream:
         tree_rewrite_rules = yaml.safe_load(stream)
 
-    with open('./snapshots/test_kotlin/test.kt','r') as ktFile:
+    with open('./tests/snapshots/test_kotlin/test.kt','r') as ktFile:
         code = ktFile.read()
 
     doc = parse_and_translate(parsers["kotlin"], tree_rewrite_rules["kotlin"], code.encode('utf-8'))
