@@ -1,2 +1,2 @@
-tree_sitter
+tree_sitter==0.21.3
 pyyaml
