@@ -1,2 +1,14 @@
-tree_sitter==0.21.3
+tree_sitter
+tree_sitter_c
+tree_sitter_c_sharp
+tree_sitter_go
+tree_sitter_java
+tree_sitter_javascript
+tree_sitter_kotlin
+tree_sitter_ocaml
+tree_sitter_php
+tree_sitter_python
+tree_sitter_ruby
+tree_sitter_rust
+tree_sitter_typescript
 pyyaml

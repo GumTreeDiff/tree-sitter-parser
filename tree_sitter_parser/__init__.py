@@ -2,7 +2,19 @@ import sys
 from xml.dom import minidom
 
 from tree_sitter import Language, Parser
-
+import tree_sitter_c as tsc
+import tree_sitter_cpp as tscpp
+import tree_sitter_c_sharp as tscsharp
+import tree_sitter_go as tsgo
+import tree_sitter_java as tsjava
+import tree_sitter_javascript as tsjavascript
+import tree_sitter_kotlin as tskotlin
+import tree_sitter_ocaml as tsocaml
+import tree_sitter_php as tsphp
+import tree_sitter_python as tspython
+import tree_sitter_ruby as tsruby
+import tree_sitter_rust as tsrust
+import tree_sitter_typescript as tstypescript
 
 EMPTY_CONFIG = {"flattened": [], "aliased": {}, "ignored": [], "label_ignored": []}
 MAX_LABEL_SIZE = 75
@@ -16,47 +28,20 @@ def eprint(*args, **kwargs):
 
 
 def init_parsers(script_dir):
-    """
-    Compile parsers (when needed) and return a parser map that can be indexed by language.
-    """
-    if Language.build_library(
-        script_dir + "/build/languages.so",
-        [
-            script_dir + "/tree-sitter-c",
-            script_dir + "/tree-sitter-c-sharp",
-            script_dir + "/tree-sitter-cmake",
-            script_dir + "/tree-sitter-go",
-            script_dir + "/tree-sitter-java",
-            script_dir + "/tree-sitter-javascript",
-            script_dir + "/tree-sitter-ocaml/grammars/ocaml",
-            script_dir + "/tree-sitter-php/php",
-            script_dir + "/tree-sitter-python",
-            script_dir + "/tree-sitter-r",
-            script_dir + "/tree-sitter-ruby",
-            script_dir + "/tree-sitter-rust",
-            script_dir + "/tree-sitter-typescript/typescript",
-            script_dir + "/tree-sitter-kotlin"
-        ],
-    ):
-        eprint("Compiled dynamic library of parsers.")
-    else:
-        eprint("Reusing dynamic library of parsers.")
-
     return {
-        "c": Language(script_dir + "/build/languages.so", "c"),
-        "csharp": Language(script_dir + "/build/languages.so", "c_sharp"),
-        "cmake": Language(script_dir + "/build/languages.so", "cmake"),
-        "go": Language(script_dir +  "/build/languages.so", "go"),
-        "java": Language(script_dir + "/build/languages.so", "java"),
-        "javascript": Language(script_dir + "/build/languages.so", "javascript"),
-        "ocaml": Language(script_dir + "/build/languages.so", "ocaml"),
-        "php": Language(script_dir + "/build/languages.so", "php"),
-        "python": Language(script_dir + "/build/languages.so", "python"),
-        "r": Language(script_dir + "/build/languages.so", "r"),
-        "ruby": Language(script_dir + "/build/languages.so", "ruby"),
-        "rust": Language(script_dir + "/build/languages.so", "rust"),
-        "typescript": Language(script_dir + "/build/languages.so", "typescript"),
-        "kotlin": Language(script_dir + "/build/languages.so", "kotlin")
+        "c": Language(tsc.language()),
+        "cpp": Language(tscpp.language()),
+        "csharp": Language(tscsharp.language()),
+        "go": Language(tsgo.language()),
+        "java": Language(tsjava.language()),
+        "javascript": Language(tsjavascript.language()),
+        "kotlin": Language(tskotlin.language()),
+        "ocaml": Language(tsocaml.language_ocaml()),
+        "php": Language(tsphp.language_php()),
+        "python": Language(tspython.language()),
+        "rust": Language(tsrust.language()),
+        "ruby": Language(tsruby.language()),
+        "typescript": Language(tstypescript.language_typescript()),
     }
 
 
@@ -66,8 +51,7 @@ def parse_and_translate(parser_lang, config, input: bytes):
     """
     newline_offsets = create_newline_offsets(input)
 
-    parser = Parser()
-    parser.set_language(parser_lang)
+    parser = Parser(parser_lang)
     tree = parser.parse(input)
 
     doc = minidom.Document()
